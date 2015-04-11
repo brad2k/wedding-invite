@@ -1,0 +1,11 @@
+@import "core/variables";
+@import "core/normalize";
+
+body {
+    background-color: $color-light-blue;
+    font: 14px 'Titillium Web', Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}

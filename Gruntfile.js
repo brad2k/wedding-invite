@@ -15,26 +15,39 @@ module.exports = function(grunt) {
     sass: {                              // Task
       dist: {                            // Target
         options: {                       // Target options
-          style: 'expanded'
+          style: 'expanded',
+          loadPath: 'public/css'
         },
-        files: [{
-          expand: true,
-          cwd: 'styles',
-          src: ['./public/css/*.scss'],
-          dest: './public/css/',
-          ext: '.css'
-        }]
+        files: {                         // Dictionary of files
+          'public/css/main.css': 'public/css/main.scss'       // 'destination': 'source'
+        }
+      }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: "public/js",
+          mainConfigFile: "path/to/config.js",
+          name: "path/to/almond", // assumes a production build using almond
+          out: "path/to/optimized.js"
+        }
+      }
+    },
+    watch: {
+      css: {
+        files: ['public/css/*.scss', 'public/css/core/*.scss'],
+        tasks: ['sass']
       }
     }
   });
 
-  // Load the plugin that provides the "uglify" task.
+  // Load the tasks.
   grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  // Load the plugin that provides the "sass" task.
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-requirejs');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['watch']);
 
 };
