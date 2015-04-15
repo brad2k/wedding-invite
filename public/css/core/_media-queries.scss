@@ -1,0 +1,52 @@
+@mixin media($media, $high-resolution: false) {
+    @if $media == extra-small {
+        @if $high-resolution {
+            @media screen and
+                (min-width: $breakpoint-extra-small) and (-webkit-min-device-pixel-ratio: 1.5),
+                (min-width: $breakpoint-extra-small) and (min-resolution: 1.5dppx)
+            { @content; }
+        } @else {
+            @media screen and (min-width: $breakpoint-extra-small) { @content; }
+        }
+    }
+    @if $media == small {
+        @if $high-resolution {
+            @media screen and
+                (min-width: $breakpoint-small) and (-webkit-min-device-pixel-ratio: 1.5),
+                (min-width: $breakpoint-small) and (min-resolution: 1.5dppx)
+            { @content; }
+        } @else {
+            @media screen and (min-width: $breakpoint-small) { @content; }
+        }
+    }
+    @else if $media == medium {
+        @if $high-resolution {
+            @media screen and
+                (min-width: $breakpoint-medium) and (-webkit-min-device-pixel-ratio: 1.5),
+                (min-width: $breakpoint-medium) and (min-resolution: 1.5dppx)
+            { @content; }
+        } @else {
+            @media screen and (min-width: $breakpoint-medium) { @content; }
+        }
+    }
+    @else if $media == large {
+        @if $high-resolution {
+            @media screen and
+                (min-width: $breakpoint-large) and (-webkit-min-device-pixel-ratio: 1.5),
+                (min-width: $breakpoint-large) and (min-resolution: 1.5dppx)
+            { @content; }
+        } @else {
+            @media screen and (min-width: $breakpoint-large) { @content; }
+        }
+    }
+    @else if $media == extra-large {
+        @if $high-resolution {
+            @media screen and
+                (min-width: $breakpoint-extra-large) and (-webkit-min-device-pixel-ratio: 1.5),
+                (min-width: $breakpoint-extra-large) and (min-resolution: 1.5dppx)
+            { @content; }
+        } @else {
+            @media screen and (min-width: $breakpoint-extra-large) { @content; }
+        }
+    }
+}

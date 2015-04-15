@@ -1,17 +1,9 @@
 // Core
 @import "core/core";
 
-nav {
-	text-align: center;
-	padding: 10px;
-	background-color: rgba(255, 255, 255, 0.5);
-	text-transform: uppercase;
-	font-weight: 700;
-
-	li {
-		display: inline-block;
-		margin-right: 20px;
-	}
+.hero-image {
+	display: block;
+	max-width: 100%;
 }
 
 .page {
@@ -32,5 +24,42 @@ nav {
 		background-color: #FFF;
 		color: $color-black;
 		font-size: 60px;
+		display: inline-block;
+		padding: 5px 20px;
+	}
+}
+
+.page-home {
+	.line {
+		margin: 0;
+		font-size: 30px;
+		line-height: 1.1;
+		color: $color-light-blue;
+	}
+
+	.line-intro-1 {
+		font-weight: 700;
+	}
+
+	.line-intro-2 {
+		font-weight: 200;
+	}
+
+	.line-names {
+		font-size: 60px;
+		color: $color-orange;
+	}
+
+	.line-dates {
+		
+	}
+
+	.line-place {
+		font-weight: 200;
+	}
+
+	.line-footnote {
+		font-size: 24px;
+		color: $color-orange;
 	}
 }

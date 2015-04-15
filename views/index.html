@@ -1,21 +1,21 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<nav>
-	<ul>
-		<li>Home</li>
-		<li>Our story</li>
-		<li>Event info</li>
-		<li>Getting there</li>
-		<li>Travel ideas</li>
-		<li>Photo gallery</li>
-		<li>Gifts</li>
-	</ul>
-</nav>
 
+<img class="hero-image" src="/images/valley-wide.jpg" alt="Some place in France">
+{{ title }}
 <section class="page page-home">
-	<h1>Brad &amp; Manuel</h1>
-	<h2>June 22&ndash;24, 2006</h2>
-</section>
+	<p class="line line-intro line-intro-1">Banana &amp; Potato present</p>
+	<p class="line line-intro line-intro-2">A Provençal wedding</p>
+	<h1 class="line line-names">Brad &amp; Manuel</h1>
+	<h2 class="line line-dates">June 22&ndash;24, 2016</h2>
+	<p class="line line-place">Provençe, France</p>
+	<p class="line line-footnote">A local ceremony will also be held</p>
 
+	<form name="email-registration" method="post" action="/register">
+		<p>We'll update the web site and send formal invites once they're ready. Sign up to be notified when updates are made to the web site</p>
+		<input type="email" class="form-field" placeholder="Enter your e-mail address">
+		<button type="submit">Submit</button>
+	</form>
+</section>
 {% endblock %}

@@ -1,11 +1,50 @@
 @import "core/variables";
 @import "core/normalize";
+@import "core/media-queries";
+@import "core/mixins";
+@import "core/nav";
 
-body {
-    background-color: $color-light-blue;
-    font: 14px 'Titillium Web', Helvetica, Arial, sans-serif;
+html {
+    color: $color-black;
+    background-color: #FFF;
+    font: 14px/1.4 'Titillium Web', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
 }
 
 a {
-    color: #00B7FF;
+    color: $color-orange;
+}
+
+::selection {
+    background: $color-light-blue;
+    text-shadow: none;
+}
+
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.hide-text {
+    @include hide-text;
 }
