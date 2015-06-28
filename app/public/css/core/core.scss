@@ -1,0 +1,65 @@
+@import "core/variables";
+@import "core/normalize";
+@import "core/media-queries";
+@import "core/fonts";
+@import "core/typography";
+@import "core/mixins";
+@import "core/nav";
+
+html {
+    color: $color-black;
+    background-color: #FFF;
+    font: 16px/1.4 'Neutratext Book', Helvetica, Arial, sans-serif;
+    @include box-sizing(border-box);
+
+    *, *:before, *:after {
+        @include box-sizing(inherit);
+    }
+}
+
+.content {
+    position: relative;
+}
+
+a {
+    color: $color-orange;
+}
+
+::selection {
+    background: $color-light-blue;
+    text-shadow: none;
+}
+
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+p {
+    margin: 0 0 20px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input, textarea {
+    outline: none;
+    border-width: 0;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.hide-text {
+    @include hide-text;
+}

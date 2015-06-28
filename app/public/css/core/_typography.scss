@@ -1,0 +1,7 @@
+@mixin font-family($family) {
+	font-family: "#{$family}", Helvetica, Arial, sans-serif;
+}
+
+.italic {
+	@include font-family('Neutratext Book Italic');
+}

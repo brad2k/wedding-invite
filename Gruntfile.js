@@ -16,7 +16,11 @@ module.exports = function(grunt) {
       dist: {                            // Target
         options: {                       // Target options
           style: 'expanded',
-          loadPath: 'public/css'
+          loadPath: [
+            'public/css',
+            'bower_components/bourbon/app/assets/stylesheets',
+            'bower_components/neat/app/assets/stylesheets'
+          ]
         },
         files: {                         // Dictionary of files
           'public/css/main.css': 'public/css/main.scss'       // 'destination': 'source'
@@ -38,6 +42,27 @@ module.exports = function(grunt) {
         files: ['public/css/*.scss', 'public/css/core/*.scss'],
         tasks: ['sass']
       }
+    },
+    bowercopy: {
+      options: {
+        srcPrefix: 'bower_components'
+      },
+      scripts: {
+        options: {
+          destPrefix: 'public/js/vendor'
+        },
+        files: {
+          'jquery/jquery.js': 'jquery/dist/jquery.js'
+        }
+      },
+      css: {
+        options: {
+          destPrefix: 'public/css/vendor'
+        },
+        files: {
+          'normalize/normalize.css': 'normalize.css/normalize.css'
+        }
+      }
     }
   });
 
@@ -46,6 +71,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-bowercopy');
 
   // Default task(s).
   grunt.registerTask('default', ['watch']);

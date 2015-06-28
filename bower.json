@@ -1,0 +1,25 @@
+{
+  "name": "wedding-invite",
+  "version": "0.0.0",
+  "homepage": "https://github.com/brad2k/wedding-invite",
+  "authors": [
+    "Brad Azevedo <bazevedo@jawbone.com>"
+  ],
+  "description": "Wedding website for Manuel & Brad",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bourbon": "~4.2.3",
+    "neat": "~1.7.2",
+    "normalize.css": "~3.0.2"
+  },
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}

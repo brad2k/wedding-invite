@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Manuel &amp; Brad &mdash; June 2016</title>
+        <meta name="description" content="Celebrating the wedding of Brad &amp; Manuel">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/main.css">
+        <script data-main="js/main" async src="js/vendor/require-2.1.17.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="content">
+        {% block content %}{% endblock %}
+        <footer class="primary-footer">
+            <img class="footer-image" src="/images/puppy-outline.min.svg">
+            <span>Brad &amp; Manuel &mdash; 2016</span>
+        </footer>
+        </div>
+
+        <script>
+            if (document.location.hostname!=="localhost") {
+                (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+                e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+                e.src='https://www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+                ga('create','UA-61535424-1','auto');ga('send','pageview');
+            }
+        </script>
+    </body>
+</html>

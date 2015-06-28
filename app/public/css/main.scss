@@ -1,0 +1,151 @@
+// Core
+@import "core/core";
+
+.hero-image-wrap {
+	background-color: $color-hero-bg;
+	border-bottom: 1px solid darken(#f0efeb, 10%);
+	position: relative;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+	}
+}
+
+.hero-image {
+	display: block;
+	max-width: 100%;
+	max-height: 475px;
+}
+
+.hero-content {
+	position: absolute;
+	top: 50%;
+	right: 15%;
+	text-align: center;
+	@include transform(translateY(-50%));
+
+	.line {
+		margin: 0;
+		font-size: 24px;
+		line-height: 1.1;
+		color: $color-light-blue;
+	}
+
+	.line-names {
+		font-size: 60px;
+		@include font-family('Neutra Display Titling');
+		color: $color-orange;
+	}
+
+	.line-intro-1 {
+		letter-spacing: 4px;
+		@include font-family('Neutraface Condensed Titling');
+	}
+
+	.line-intro-2 {
+		font-size: 20px;
+		letter-spacing: 2px;
+		margin-bottom: 5px;
+		@include font-family('Neutratext Book');
+	}
+
+	.line-dates {
+		@include font-family('Neutratext Book');
+	}
+}
+
+.home-wrap {
+	float: left;
+	width: 50%;
+	font-size: 20px;
+}
+
+.intro-wrap {
+	margin-bottom: 60px;
+}
+
+.home-intro-line {
+	font-size: 32px;
+}
+
+.map-wrap {
+	float: right;
+	width: 50%;
+	margin: 0;
+}
+
+.map-image {
+	display: inline-block;
+	height: 350px;
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.map-headline {
+	font-size: 32px;
+	margin-bottom: 5px;
+	display: inline-block;
+	border-bottom: 1px solid $color-grey;
+}
+
+.page {
+	text-align: center;
+	padding: 80px;
+	@include clearfix;
+}
+
+.line-footnote {
+	font-size: 24px;
+	margin-bottom: 0;
+	color: $color-orange;
+}
+
+.line-footnote-followup {
+	font-size: 16px;
+	display: block;
+	color: $color-black;
+}
+
+.form-field {
+	font-size: 20px;
+	line-height: 1;
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto 10px;
+	vertical-align: middle;
+}
+
+.form-text {
+	display: block;
+	padding: 10px 0;
+	border-bottom: 2px solid $color-grey;
+	@include box-shadow(none);
+}
+
+.form-button {
+	display: block;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	outline: none;
+	border: 1px solid $color-orange;
+	background-color: $color-orange;
+	transition: all 150ms ease-out;
+	color: #FFF;
+
+	&:hover {
+		background-color: lighten($color-orange, 5%);
+	}
+}
+
+#email-registration {
+	background-color: lighten($color-hero-bg, 5%);
+	border: 10px solid $color-grey;
+	padding: 40px;
+	font-size: 16px;
+}

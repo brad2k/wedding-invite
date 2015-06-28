@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<header class="hero-image-wrap">
+	<img class="hero-image" src="/images/hero-desaturated3-2000.v1.jpg" alt="Some place in France">
+	<article class="hero-content">
+		<p class="line line-intro line-intro-1">Banana &amp; Potato present</p>
+		<p class="line line-intro line-intro-2">A Provençal wedding</p>
+		<h1 class="line line-names">Brad &amp; Manuel</h1>
+		<h2 class="line line-dates">June 22&ndash;24, 2016</h2>
+	</article>
+</header>
+
+{#% include "./nav.html" %#}
+
+<section class="page page-home">
+	<figure class="map-wrap">
+		<img class="map-image" src="/images/map.svg" alt="Map of France">
+		<figcaption class="line map-headline italic">Provence, France</figcaption>
+		<p>Exact location coming soon</p>
+	</figure>
+
+	<div class="home-wrap">
+		<article class="intro-wrap">
+			<p class="line home-intro-line italic">Bonjour, tout le monde!</p>
+
+			<p class="line">We'd love for you to join us for a <i class="italic">soirée</i> (or two) in the sunny South of France. Dramatic landscapes, champagne, and proper croissants&mdash;what could be better? A venue, of course! We're still working on that. We'll update the web site and send formal invites ASAP.</p>
+
+			<p class="line line-footnote">
+				We will also host a local celebration after the ceremony.
+				<span class="line-footnote-followup">(we know, France is far)</span>
+			</p>
+		</article>
+
+		<form id="email-registration" name="email-registration" method="post" action="/register">
+			<p>Looking for something slightly more expeditious than USPS? Leave your email below and we'll let you know when changes are made.</p>
+			<input type="email" class="form-field form-text" placeholder="Enter your e-mail address">{#
+			#}<button type="submit" class="form-field form-button">Register</button>
+		</form>
+	</div>
+</section>
+{% endblock %}
