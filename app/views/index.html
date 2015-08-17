@@ -1,43 +1,151 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-
-<header class="hero-image-wrap">
-	<img class="hero-image" src="/images/hero-desaturated3-2000.v1.jpg" alt="Some place in France">
+<header class="pane hero-wrap">
 	<article class="hero-content">
-		<p class="line line-intro line-intro-1">Banana &amp; Potato present</p>
+		<p class="line line-intro line-intro-1 neutra-condensed-titling">Banana &amp; Potato present</p>
 		<p class="line line-intro line-intro-2">A Provençal wedding</p>
-		<h1 class="line line-names">Brad &amp; Manuel</h1>
-		<h2 class="line line-dates">June 22&ndash;24, 2016</h2>
+		<h1 class="line line-names neutra-display-titling">Brad &amp; Manuel</h1>
+		<h2 class="line line-dates"><time>21&ndash;23 June, 2016</time></h2>
 	</article>
 </header>
 
-{#% include "./nav.html" %#}
+<main class="page">
+	<section class="pane intro-pane" id="event-info">
+		<figure class="map-wrap">
+			<img class="welcome-image" src="/images/hay-flipped.jpg" alt="Brad &amp; Manuel">
+		</figure>
 
-<section class="page page-home">
-	<figure class="map-wrap">
-		<img class="map-image" src="/images/map.svg" alt="Map of France">
-		<figcaption class="line map-headline italic">Provence, France</figcaption>
-		<p>Exact location coming soon</p>
-	</figure>
+		<article class="home-wrap">
+			<p class="line heading italic">Bonjour, tout le monde!</p>
 
-	<div class="home-wrap">
-		<article class="intro-wrap">
-			<p class="line home-intro-line italic">Bonjour, tout le monde!</p>
+			<p class="line">Join us for a <i class="italic">soirée</i> (or two) in the sunny South of France! We're hosting an intimate celebration with our closest friends and family at La Coquillade, a resort in the rugged, sun-drenched landscapes of the Lubéron.</p>
 
-			<p class="line">We'd love for you to join us for a <i class="italic">soirée</i> (or two) in the sunny South of France. Dramatic landscapes, champagne, and proper croissants&mdash;what could be better? A venue, of course! We're still working on that. We'll update the web site and send formal invites ASAP.</p>
+			<h2 class="sub-heading italic">Schedule of events</h2>
+			<ol class="schedule">
+				<li><time datetime="2016-06-21" class="bold">Tue, 21 June</time>Arrival, apéritifs, and welcome dinner</li>
+				<li><time datetime="2016-06-22" class="bold">Wed, 22 June</time>Ceremony, dinner, and drinks</li>
+				<li><time datetime="2016-06-23" class="bold">Thu, 23 June</time>Breakfast, lunch by the pool</li>
+				<li><time datetime="2016-06-24" class="bold">Fri, 24 June</time>Departure</li>
+			</ol>
 
-			<p class="line line-footnote">
-				We will also host a local celebration after the ceremony.
-				<span class="line-footnote-followup">(we know, France is far)</span>
+			<p class="line">You are of course free to come and go as you please, but we honestly feel that you'll be disappointed staying fewer than three nights at the resort. There is much to enjoy at La Coquillade itself and among the hill-top towns that dot the region.</p>
+
+			<p class="line line-footnote">We know, France is far. We will also host a reception in California after the ceremony for those who aren't able to make the journey. You are welcome to either, or both.
 			</p>
 		</article>
+	</section>
 
-		<form id="email-registration" name="email-registration" method="post" action="/register">
-			<p>Looking for something slightly more expeditious than USPS? Leave your email below and we'll let you know when changes are made.</p>
-			<input type="email" class="form-field form-text" placeholder="Enter your e-mail address">{#
-			#}<button type="submit" class="form-field form-button">Register</button>
+	<section class="pane travel-ideas" id="travel-ideas">
+		<article>
+			<h2 class="line italic heading">Travel ideas</h2>
+
+			<p class="line skinny-intro-line intro-line">A visit to the South of France should be part of a larger European extravaganza. We <span class="italic">highly</span> recommend allowing yourself time to recover from the rigors of travel by visiting your port of entry for a few days before venturing into Provence. Here are a few ideas to start your mind wandering.</p>
+
+			<ul class="destinations">
+				<li class="destination">
+					<h3 class="line italic sub-heading">France</h3>
+
+					<p>
+						<q class="italic">Paris is always a good idea.</q>
+						<span>-Audrey Hepburn</span>
+					</p>
+
+					<div class="columnize">
+						<p class="line">Not only is Paris is the most logical port of entry for the purposes of our wedding, but there are few places more beautiful. Paris teems with history, life and culture in a way that forces you to slow down and enjoy life&mdash;something completely lost in American culture. There are up to four flights daily between SFO and CDG, and high-speed TGV trains can whisk you to Avignon in about two hours, making Paris an easy place to start.</p>
+						
+						<p class="line">To the north: Normandy, home to several <abbr>WWII</abbr> sites as well as captivating Mont-Saint-Michel. To the west you'll find the Loire Valley: château country, and further west is the rugged coastline of Brittany. To the east, the rolling hills of Champagne, followed by the German-influenced border towns of Strasbourg and Colmar. To the south you'll find the sun-drenched regions of Provence and the Riviera&mdash;the Côte d'Azur. Catch all the posh seaside culture you can stand in Saint-Tropez, Antibes, Nice, and Monaco.</p>
+
+						<p class="line">Provence is dotted with small and mid-sized cities, many of which are heavily Roman influenced. The terrain is often rugged, offering dramatic landscapes overlooking vineyards, orchards and a variety of crops. Popular mid-sized cities in Provence include Avignon, Aix-en-Provence, Arles, and Nimes. Some of the smaller villages&mdash;the kind that really envoke the essence of Provence&mdash;include St-Rémy de Provence, L'Isle-sur-la-Sorgue, Fontaine-de-Vaucluse, Les Baux de Provence, and Bédoin. The Lubéron lies on the eastern border of Provence, closer to the Alps and is home to villages like Bonnieux, Gordes, Lacoste, Ménerbes, and the famous Roussillon.</p>
+					</div>
+				</li>
+				<li class="destination">
+					<h3 class="line italic sub-heading">England</h3>
+
+					<p>
+						<q class="italic">&hellip;when a man is tired of London, he is tired of life; for there is in London all that life can afford.</q>
+						<span>-Samuel Johnson</span>
+					</p>
+
+					<p class="line columnize">London is a city of incredible diversity and a fascinating mix of historic and modern. It's a massive, ever-changing city with something for everyone. There are six flights daily from SFO to Heathrow, and Eurostar operates direct high-speed rail service between St Pancras and Avignon, making London a great place to start.</p>
+				</li>
+				<li class="destination">
+					<h3 class="line italic sub-heading">The Netherlands</h3>
+
+					<p class="line columnize">Amsterdam, like San Francisco, is a compact city with a lot of character and a laissez-faire attitude. It's packed with quirky architecture, orderly canals, and very walkable. Most Dutch people speak English better than most Americans, making it an easy place to visit. KLM operates daily flights from SFO to Amsterdam, and Avignon is accessible via high-speed rail with a change in Paris.</p>
+				</li>
+				<li class="destination">
+					<h3 class="line italic sub-heading">Italy</h3>
+
+					<p class="line columnize">Northern Italy is a viable option for those visiting the Côte d'Azur after the wedding (specifically Nice). Italian Riveria towns just beyond the border include San Remo, Bordighera, and Genoa. Milan and Pisa are a bit further afield, but still accessible by train. Anything beyond Milan would be better by air.</p>
+				</li>
+				<li class="destination">
+					<h3 class="line italic sub-heading">Ireland</h3>
+
+					<p class="line columnize">Dublin is a small, vibrant city that represents modern Ireland. Meanwhile, the countryside is easily accessible by car, allowing visitors to pass through traditional towns and rolling green hills as they cross the Emerald Isle. Aer Lingus operates daily flights between SFO and Dublin. You can then fly from Dublin to Marseille to reach the wedding venue.</p>
+				</li>
+			</ul>
+		</article>
+	</section>
+
+	<section class="pane how-to-get-there" id="getting-there">
+		<figure class="map-wrap">
+			<img class="map-image" src="/images/map.svg" alt="Map of France">
+			<figcaption class="line map-headline italic">La Coquillade</figcaption>
+			<p>Gargas, France</p>
+		</figure>
+
+		<article class="home-wrap">
+			<h2 class="line italic heading">How to get there</h2>
+
+			<p class="line intro-line">Getting to La Coquillade does take some effort. You will ultimately arrive to the gates of La Coquillade by car, but you have options leading up to this final stage of the journey.</p>
+
+			<ol class="arrival-steps">
+				<li>
+					<h3>Step 1: getting to Europe</h3>
+					<p class="line">Amsterdam, London, Paris, and Zurich are the easiest ports of entry with a high-speed rail connection to the South of France.</p>
+
+					<p class="line">There are also non-stop flights between San Francisco and Copenhagen, Dublin, Frankfurt, Istanbul, and Munich. Each of these cities also has non-stop flights to the South of France.</p>
+				</li>
+				<li>
+					<h3>Step 2: make your way to the South of France</h3>
+
+					<h4>By rail</h4>
+					<p class="line">Avignon TGV is the rail gateway to Provence and has on-site car rental facilities. Drive time to La Coquillade is approximately one-and-a-half hours.</p>
+
+					<h4>By air</h4>
+					<p class="line">Marseille (MRS) is the largest airport serving Provence and has on-site car rental facilities. Drive time to La Coquillade is approximately two hours. Note that Marseille is the second-largest city in France and therefore subject to traffic.</p>
+				</li>
+				<li>
+					<h3>Step 3: getting to La Coquillade</h3>
+					<p class="line">We highly recommend you map the route on your phone using Google Maps (this would of course require an international data plan). La Coquillade is not listed in most rental car GPS systems and does not have an address. Keep your eyes peeled for a sign pointing you in the right direction as you approach the area.</p>
+				</li>
+			</ol>
+		</article>
+	</section>
+
+	<section class="pane stay-updated">
+		<form id="email-submission" action="http://banana-and-potato.us11.list-manage.com/subscribe/post" method="POST">
+			<legend class="line skinny-intro-line">Want to keep up-to-date? Leave your email below and we'll let you know when changes are made to the site or when we have other relevant news.</legend>
+			<input type="hidden" name="u" value="8e62a2e8b88000aaee90a7f52">
+			<input type="hidden" name="id" value="965b589c25">
+
+			<!-- <label for="MERGE0">Email Address <span class="req asterisk">*</span></label> -->
+		    <input class="form-field form-text" type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" required placeholder="E-mail address">
+
+			<!-- <label for="MERGE1">First Name</label> -->
+		    <input class="form-field form-text" type="text" name="MERGE1" id="MERGE1" size="25" value="" placeholder="First name">
+
+			<!-- <label for="MERGE2">Last Name</label> -->
+		    <input class="form-field form-text" type="text" name="MERGE2" id="MERGE2" size="25" value="" placeholder="Last name">
+			
+			<input class="hide-this-field" type="text" name="b_8e62a2e8b88000aaee90a7f52_965b589c25" tabindex="-1" value="">
+
+			<button type="submit" class="form-field form-button">Register</button> 
 		</form>
-	</div>
-</section>
+
+			<!-- <input type="email" class="form-field form-text" placeholder="Enter your e-mail address">{#
+			#}<button type="submit" class="form-field form-button">Register</button> -->
+	</section>
+</main>
 {% endblock %}

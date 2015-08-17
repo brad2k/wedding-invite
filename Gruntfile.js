@@ -17,13 +17,13 @@ module.exports = function(grunt) {
         options: {                       // Target options
           style: 'expanded',
           loadPath: [
-            'public/css',
-            'bower_components/bourbon/app/assets/stylesheets',
-            'bower_components/neat/app/assets/stylesheets'
+            'app/public/css',
+            'app/bower_components/bourbon/app/assets/stylesheets',
+            'app/bower_components/neat/app/assets/stylesheets'
           ]
         },
         files: {                         // Dictionary of files
-          'public/css/main.css': 'public/css/main.scss'       // 'destination': 'source'
+          'app/public/css/main.css': 'app/public/css/main.scss'       // 'destination': 'source'
         }
       }
     },
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: ['public/css/*.scss', 'public/css/core/*.scss'],
+        files: ['app/public/css/*.scss', 'app/public/css/core/*.scss'],
         tasks: ['sass']
       }
     },
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         options: {
-          destPrefix: 'public/js/vendor'
+          destPrefix: 'app/public/js/vendor'
         },
         files: {
           'jquery/jquery.js': 'jquery/dist/jquery.js'
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
       },
       css: {
         options: {
-          destPrefix: 'public/css/vendor'
+          destPrefix: 'app/public/css/vendor'
         },
         files: {
           'normalize/normalize.css': 'normalize.css/normalize.css'

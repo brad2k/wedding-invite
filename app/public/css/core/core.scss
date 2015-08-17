@@ -1,19 +1,19 @@
 @import "core/variables";
 @import "core/normalize";
+@import "core/bourbon";
 @import "core/media-queries";
 @import "core/fonts";
 @import "core/typography";
-@import "core/mixins";
 @import "core/nav";
 
 html {
     color: $color-black;
     background-color: #FFF;
     font: 16px/1.4 'Neutratext Book', Helvetica, Arial, sans-serif;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
 
     *, *:before, *:after {
-        @include box-sizing(inherit);
+        box-sizing: inherit;
     }
 }
 
@@ -47,6 +47,11 @@ textarea {
 input, textarea {
     outline: none;
     border-width: 0;
+}
+
+ol, li {
+    list-style-type: none;
+    padding: 0;
 }
 
 .browserupgrade {

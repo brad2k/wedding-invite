@@ -5,3 +5,23 @@
 .italic {
 	@include font-family('Neutratext Book Italic');
 }
+
+.bold {
+    @include font-family('Neutratext Bold');
+}
+
+.neutra-display-titling {
+    @include font-family('Neutra Display Titling');
+}
+
+.neutra-condensed-titling {
+    @include font-family('Neutraface Condensed Titling');
+}
+
+.heading {
+    font-size: 32px;
+}
+
+.sub-heading {
+    font-size: 28px;
+}
