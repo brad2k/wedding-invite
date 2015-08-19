@@ -6,7 +6,8 @@ var year = new Date().getFullYear();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Test', year: year });
+    var fontsLoaded = req.cookies['fonts-loaded'] ? req.cookies['fonts-loaded'] : false;
+    res.render('index', { fontsLoaded: fontsLoaded, year: year });
 });
 
 /* Route for registering an email address */

@@ -1,5 +1,5 @@
-require(["require", "jquery", "vendor/fontfaceobserver", "smoothscroll"], function(require, $, fontfaceobserver, smoothscroll) {
-    
+require(["require", "jquery", "vendor/fontfaceobserver", "smoothscroll", "vendor/js.cookie"], function(require, $, fontfaceobserver, smoothscroll, cookie) {
+
     // Email registration form
     var emailForm = $('#email-submission');
     emailForm.on('submit', function (e) {
@@ -17,16 +17,20 @@ require(["require", "jquery", "vendor/fontfaceobserver", "smoothscroll"], functi
 
 
     // Conditional font loading
-    var fontA = new window.FontFaceObserver( "Neutratext Book Italic"),
-        fontB = new window.FontFaceObserver( "Neutratext Bold"),
-        fontC = new window.FontFaceObserver( "Neutra Display Titling"),
-        fontD = new window.FontFaceObserver( "Neutraface Condensed Titling");
 
-    window.Promise
-    .all([fontA.check(), fontB.check(), fontC.check(), fontD.check()])
-    .then(function(){
-        window.document.documentElement.className += " fonts-loaded";
-    });
+    if(!window.document.documentElement.className.indexOf( "fonts-loaded" ) > -1 ){
+        var fontA = new window.FontFaceObserver( "Neutratext Book Italic"),
+            fontB = new window.FontFaceObserver( "Neutratext Bold"),
+            fontC = new window.FontFaceObserver( "Neutra Display Titling"),
+            fontD = new window.FontFaceObserver( "Neutraface Condensed Titling");
+
+        window.Promise
+        .all([fontA.check(), fontB.check(), fontC.check(), fontD.check()])
+        .then(function(){
+            window.document.documentElement.className += " fonts-loaded";
+            cookie.set('fonts-loaded', 'true');
+        });
+    }
 
 
     // Flickr
