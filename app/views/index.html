@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<header class="pane hero-wrap">
+<header class="pane hero-wrap" id="home">
 	<article class="hero-content">
 		<p class="line line-intro line-intro-1 neutra-condensed-titling">Banana &amp; Potato present</p>
 		<p class="line line-intro line-intro-2">A Provençal wedding</p>
@@ -10,16 +10,24 @@
 	</article>
 </header>
 
+{% include "./nav.html" %}
+
 <main class="page">
 	<section class="pane intro-pane" id="event-info">
-		<figure class="map-wrap">
-			<img class="welcome-image" src="/images/hay-flipped.jpg" alt="Brad &amp; Manuel">
+		<figure class="column-right">
+			<img
+					sizes="(min-width: 480px) 90vw, (min-width: 480px) 400w, 90vw"
+					srcset="/images/hay-320.v1.jpg 320w,
+							/images/hay-550.v1.jpg 480w,
+							/images/hay-786.v1.jpg 768w"
+					class="welcome-image"
+					alt="Brad &amp; Manuel">
 		</figure>
 
-		<article class="home-wrap">
+		<article class="column-left">
 			<p class="line heading italic">Bonjour, tout le monde!</p>
 
-			<p class="line">Join us for a <i class="italic">soirée</i> (or two) in the sunny South of France! We're hosting an intimate celebration with our closest friends and family at La Coquillade, a resort in the rugged, sun-drenched landscapes of the Lubéron.</p>
+			<p class="line block-margin-large">Join us for a <i class="italic">soirée</i> (or two) in the sunny South of France! We're hosting an intimate celebration with our closest friends and family at La Coquillade, a resort in the rugged, sun-drenched landscapes of the Lubéron.</p>
 
 			<h2 class="sub-heading italic">Schedule of events</h2>
 			<ol class="schedule">
@@ -40,7 +48,7 @@
 		<article>
 			<h2 class="line italic heading">Travel ideas</h2>
 
-			<p class="line skinny-intro-line intro-line">A visit to the South of France should be part of a larger European extravaganza. We <span class="italic">highly</span> recommend allowing yourself time to recover from the rigors of travel by visiting your port of entry for a few days before venturing into Provence. Here are a few ideas to start your mind wandering.</p>
+			<p class="line skinny-intro-line block-margin-large">A visit to the South of France should be part of a larger European extravaganza. We <span class="italic">highly</span> recommend allowing yourself time to recover from jetlag by visiting your port of entry for a few days before venturing into Provence. Here are a few ideas to start your mind wandering.</p>
 
 			<ul class="destinations">
 				<li class="destination">
@@ -89,25 +97,25 @@
 	</section>
 
 	<section class="pane how-to-get-there" id="getting-there">
-		<figure class="map-wrap">
+		<figure class="column-right">
 			<img class="map-image" src="/images/map.svg" alt="Map of France">
 			<figcaption class="line map-headline italic">La Coquillade</figcaption>
 			<p>Gargas, France</p>
 		</figure>
 
-		<article class="home-wrap">
+		<article class="column-left">
 			<h2 class="line italic heading">How to get there</h2>
 
-			<p class="line intro-line">Getting to La Coquillade does take some effort. You will ultimately arrive to the gates of La Coquillade by car, but you have options leading up to this final stage of the journey.</p>
+			<p class="line block-margin-large">Getting to La Coquillade does take some effort. You will ultimately arrive to the gates of La Coquillade by car, but you have options leading up to this final stage of the journey.</p>
 
 			<ol class="arrival-steps">
-				<li>
+				<li class="block-margin-large">
 					<h3>Step 1: getting to Europe</h3>
 					<p class="line">Amsterdam, London, Paris, and Zurich are the easiest ports of entry with a high-speed rail connection to the South of France.</p>
 
-					<p class="line">There are also non-stop flights between San Francisco and Copenhagen, Dublin, Frankfurt, Istanbul, and Munich. Each of these cities also has non-stop flights to the South of France.</p>
+					<p class="line ">There are also non-stop flights between San Francisco and Copenhagen, Dublin, Frankfurt, Istanbul, and Munich. Each of these cities also has non-stop flights to the South of France.</p>
 				</li>
-				<li>
+				<li class="block-margin-large">
 					<h3>Step 2: make your way to the South of France</h3>
 
 					<h4>By rail</h4>
@@ -124,28 +132,37 @@
 		</article>
 	</section>
 
+	<section class="pane photo-gallery" id="photo-gallery">
+		<h2 class="line italic heading">Les photos</h2>
+
+		<p class="line block-margin-large">Click on any of the photos to see them in their full-sized magnificence.</p>
+
+		<a data-flickr-embed="true"  href="https://www.flickr.com/photos/bradazevedo/albums/72157655036024123" title="Wedding web site photos"><img src="https://farm6.staticflickr.com/5706/20024917444_c3f3a6d870_c.jpg" width="728" height="301" alt="Wedding web site photos"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+	</section>
+
 	<section class="pane stay-updated">
-		<form id="email-submission" action="http://banana-and-potato.us11.list-manage.com/subscribe/post" method="POST">
-			<legend class="line skinny-intro-line">Want to keep up-to-date? Leave your email below and we'll let you know when changes are made to the site or when we have other relevant news.</legend>
-			<input type="hidden" name="u" value="8e62a2e8b88000aaee90a7f52">
-			<input type="hidden" name="id" value="965b589c25">
-
-			<!-- <label for="MERGE0">Email Address <span class="req asterisk">*</span></label> -->
-		    <input class="form-field form-text" type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" required placeholder="E-mail address">
-
-			<!-- <label for="MERGE1">First Name</label> -->
-		    <input class="form-field form-text" type="text" name="MERGE1" id="MERGE1" size="25" value="" placeholder="First name">
-
-			<!-- <label for="MERGE2">Last Name</label> -->
-		    <input class="form-field form-text" type="text" name="MERGE2" id="MERGE2" size="25" value="" placeholder="Last name">
+		<form id="email-submission" action="http://banana-and-potato.us11.list-manage.com/subscribe/post-json?c=?" method="POST">
+			<legend class="line skinny-intro-line">Want to keep up-to-date? Leave your email below and we'll let you know when changes are made to the site and/or when we hear on some banging good deals on airfare.</legend>
 			
-			<input class="hide-this-field" type="text" name="b_8e62a2e8b88000aaee90a7f52_965b589c25" tabindex="-1" value="">
+			<fieldset class="form-fields">
+				<input type="hidden" name="u" value="8e62a2e8b88000aaee90a7f52">
+				<input type="hidden" name="id" value="965b589c25">
 
-			<button type="submit" class="form-field form-button">Register</button> 
+			    <input class="form-field form-text" type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" required placeholder="E-mail address">
+
+			    <!-- <input class="form-field form-text" type="text" name="MERGE1" id="MERGE1" size="25" value="" placeholder="First name"> -->
+
+			    <!-- <input class="form-field form-text" type="text" name="MERGE2" id="MERGE2" size="25" value="" placeholder="Last name"> -->
+				
+				<input class="hide-this-field" type="text" name="b_8e62a2e8b88000aaee90a7f52_965b589c25" tabindex="-1" value="">
+
+				<button type="submit" class="form-field form-button">Register</button>
+			</fieldset>
+			<fieldset class="form-confirmation">
+				<h3 class="line italic sub-heading">Success!</h3>
+				<p>We'll keep you up to date on all the latest.</p>
+			</fieldset>
 		</form>
-
-			<!-- <input type="email" class="form-field form-text" placeholder="Enter your e-mail address">{#
-			#}<button type="submit" class="form-field form-button">Register</button> -->
 	</section>
 </main>
 {% endblock %}

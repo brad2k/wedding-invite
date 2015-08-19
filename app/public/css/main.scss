@@ -5,12 +5,32 @@
 
 .pane {
 	text-align: center;
-	padding: 80px;
+	padding: 40px 20px;
 	font-size: 20px;
 	@include clearfix;
+
+	@include media(medium) {
+		padding: 80px;
+	}
 }
 
-.intro-line {
+.column-left {
+	@include media(small) {
+		float: left;
+		width: 50%;
+		padding-right: 20px;
+	}
+}
+
+.column-right {
+	@include media(small) {
+		float: right;
+		width: 50%;
+		padding-left: 20px;
+	}
+}
+
+.block-margin-large {
 	margin-bottom: 40px;
 }
 
@@ -27,6 +47,12 @@
 	height: 100vh;
 	@include display(flex);
 	@include align-items(center);
+
+	font-size: 10px;
+
+	@include media(small) {
+		font-size: 16px;
+	}
 }
 
 .hero-content {
@@ -60,29 +86,42 @@
 
 // Welcome pane
 
-.home-wrap {
-	float: left;
-	width: 50%;
-}
-
 .schedule {
 	text-align: left;
 	padding: 0;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
+	margin-bottom: 40px;
+
+	@include media(extra-small) {
+		max-width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 	time {
-		display: inline-block;
-		width: 30%;
+		display: block;
+		@include media(small) {
+			display: inline-block;
+			width: 30%;
+		}
+	}
+
+	li {
+		margin-bottom: 20px;
 	}
 }
 
 .welcome-image {
 	display: inline-block;
-	max-height: 600px;
-	max-width: 90%;
+	max-width: 100%;
 	border: 1px solid $color-light-grey;
+
+	@include media(extra-small) {
+		max-width: 400px;
+	}
+
+	@include media(small) {
+		max-width: 400px;
+	}
 }
 
 .line-footnote {
@@ -105,6 +144,10 @@
 	@include columns(2 8em);
 }
 
+.destinations {
+	padding: 0;
+}
+
 .destination {
 	margin-bottom: 40px;
 }
@@ -113,12 +156,6 @@
 // Directions pane 
 .how-to-get-there {
 	background-color: $color-light-grey;
-}
-
-.map-wrap {
-	float: right;
-	width: 50%;
-	margin: 0;
 }
 
 .map-image {
@@ -140,6 +177,19 @@
 
 	h3 {
 		text-align: center;
+	}
+}
+
+
+// Photo gallery 
+
+.photo-gallery {
+	background-color: $color-dark-blue;
+	color: #FFF;
+	display: none;
+
+	@include media(small) {
+		display: block;
 	}
 }
 
@@ -183,13 +233,33 @@
 }
 
 .hide-this-field {
-	visibility: hidden;
+	left: -5000px;
+    position: absolute;
 }
 
 #email-submission {
 	background-color: $color-light-grey;
-	border: 10px solid $color-grey;
-	padding: 40px;
+	border: 5px solid $color-grey;
+	padding: 20px;
 	max-width: 850px;
 	margin: 0 auto;
+
+	@include media(extra-small) {
+		padding: 40px;
+		border-width: 10px;
+	}
+
+	.form-confirmation {
+		display: none;
+	}
+
+	&.success {
+		.form-confirmation {
+			display: block;
+		}
+
+		.form-fields {
+			display: none;
+		}
+	}
 }

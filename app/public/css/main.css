@@ -183,7 +183,7 @@ svg:not(:root) {
  * Address margin not present in IE 8/9 and Safari.
  */
 figure {
-  margin: 1em 40px;
+  margin: 0;
 }
 
 /**
@@ -481,15 +481,22 @@ th {
 }
 
 .primary-nav {
-  height: 60px;
   text-align: center;
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+  background-color: #3f5765;
   text-transform: uppercase;
-  font-weight: 700;
+  font-size: 12px;
+}
+@media screen and (min-width: 768px) {
+  .primary-nav {
+    font-size: 16px;
+    padding: 15px;
+    height: 60px;
+  }
 }
 .primary-nav ul {
   margin: 0;
+  padding: 0;
 }
 .primary-nav a {
   display: block;
@@ -497,17 +504,67 @@ th {
 }
 .primary-nav li {
   display: inline-block;
-  margin-right: 20px;
 }
 .primary-nav li.on a, .primary-nav li:hover a {
-  border-color: #f15623;
+  border-color: #FFF;
 }
 
+/* .primary-nav-home {
+	display: block !important;
+	margin-bottom: 5px;
+	background-color: $color-orange;
+	padding-bottom: 5px;
+
+	@include media(small) {
+		display: inline-block !important;
+		margin-bottom: 0;
+		margin-right: 2%;
+		background-color: transparent;
+	}
+} */
+.primary-nav-item {
+  width: 49%;
+  margin-bottom: 2%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+}
+.primary-nav-item:nth-child(even) {
+  margin-right: 2%;
+}
+.primary-nav-item:nth-child(n+4) {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .primary-nav-item {
+    width: auto;
+    margin: 0 5% 0 0 !important;
+    background-color: transparent;
+  }
+}
 .primary-nav-item a {
-  color: #333;
+  color: #FFF;
   border-bottom: 3px solid transparent;
   transition: border-color 150ms ease-out;
-  line-height: 30px;
+  line-height: 100px;
+}
+@media screen and (min-width: 768px) {
+  .primary-nav-item a {
+    line-height: 30px;
+  }
 }
 
 .primary-nav-logo {
@@ -574,6 +631,10 @@ ol, li {
   padding: 0;
 }
 
+figure {
+  margin-bottom: 40px;
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -595,7 +656,7 @@ ol, li {
 
 .pane {
   text-align: center;
-  padding: 80px;
+  padding: 40px 20px;
   font-size: 20px;
 }
 .pane::after {
@@ -603,8 +664,29 @@ ol, li {
   content: "";
   display: table;
 }
+@media screen and (min-width: 992px) {
+  .pane {
+    padding: 80px;
+  }
+}
 
-.intro-line {
+@media screen and (min-width: 768px) {
+  .column-left {
+    float: left;
+    width: 50%;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .column-right {
+    float: right;
+    width: 50%;
+    padding-left: 20px;
+  }
+}
+
+.block-margin-large {
   margin-bottom: 40px;
 }
 
@@ -633,6 +715,12 @@ ol, li {
   -o-align-items: center;
   align-items: center;
   -ms-flex-align: center;
+  font-size: 10px;
+}
+@media screen and (min-width: 768px) {
+  .hero-wrap {
+    font-size: 16px;
+  }
 }
 
 .hero-content {
@@ -659,28 +747,45 @@ ol, li {
   margin-bottom: 5px;
 }
 
-.home-wrap {
-  float: left;
-  width: 50%;
-}
-
 .schedule {
   text-align: left;
   padding: 0;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 480px) {
+  .schedule {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .schedule time {
-  display: inline-block;
-  width: 30%;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .schedule time {
+    display: inline-block;
+    width: 30%;
+  }
+}
+.schedule li {
+  margin-bottom: 20px;
 }
 
 .welcome-image {
   display: inline-block;
-  max-height: 600px;
-  max-width: 90%;
+  max-width: 100%;
   border: 1px solid #efefef;
+}
+@media screen and (min-width: 480px) {
+  .welcome-image {
+    max-width: 400px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .welcome-image {
+    max-width: 400px;
+  }
 }
 
 .line-footnote {
@@ -701,18 +806,16 @@ ol, li {
   columns: 2 8em;
 }
 
+.destinations {
+  padding: 0;
+}
+
 .destination {
   margin-bottom: 40px;
 }
 
 .how-to-get-there {
   background-color: #efefef;
-}
-
-.map-wrap {
-  float: right;
-  width: 50%;
-  margin: 0;
 }
 
 .map-image {
@@ -734,6 +837,17 @@ ol, li {
 }
 .arrival-steps h3 {
   text-align: center;
+}
+
+.photo-gallery {
+  background-color: #3f5765;
+  color: #FFF;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .photo-gallery {
+    display: block;
+  }
 }
 
 .stay-updated legend {
@@ -770,15 +884,31 @@ ol, li {
 }
 
 .hide-this-field {
-  visibility: hidden;
+  left: -5000px;
+  position: absolute;
 }
 
 #email-submission {
   background-color: #efefef;
-  border: 10px solid #e3e3e3;
-  padding: 40px;
+  border: 5px solid #e3e3e3;
+  padding: 20px;
   max-width: 850px;
   margin: 0 auto;
+}
+@media screen and (min-width: 480px) {
+  #email-submission {
+    padding: 40px;
+    border-width: 10px;
+  }
+}
+#email-submission .form-confirmation {
+  display: none;
+}
+#email-submission.success .form-confirmation {
+  display: block;
+}
+#email-submission.success .form-fields {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

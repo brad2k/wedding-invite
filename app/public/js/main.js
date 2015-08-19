@@ -1,24 +1,26 @@
-require(["jquery", "vendor/fontfaceobserver", "smoothscroll"], function($, fontfaceobserver) {
+require(["jquery", "vendor/picturefill", "vendor/fontfaceobserver", "smoothscroll"], function($, picturefill, fontfaceobserver, smoothscroll) {
     //This function is called when scripts/helper/util.js is loaded.
     //If util.js calls define(), then this function is not fired until
     //util's dependencies have loaded, and the util argument will hold
     //the module value for "helper/util".
 
-    console.log("How dare you look here!");
+    console.log(picturefill);
 
     var emailForm = $('#email-submission');
-
-    console.log(emailForm[0].action);
 
     emailForm.on('submit', function (e) {
         e.preventDefault();
 
         $.ajax({
-          url: this.action,
-          method: "POST",
-          data: emailForm.serialize()
+            url: this.action,
+            method: "GET",
+            data: emailForm.serialize(),
+            cache: false,
+            dataType: 'json',
         }).done(function(response) {
-          console.log(response);
+            emailForm.addClass('success');
+        }).error(function (response) {
+            console.log(response);
         });
     });
 /*
