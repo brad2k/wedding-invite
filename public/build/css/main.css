@@ -839,15 +839,20 @@ figure {
   text-align: center;
 }
 
+#flickr-gallery,
 .photo-gallery {
-  background-color: #3f5765;
-  color: #FFF;
   display: none;
 }
 @media screen and (min-width: 768px) {
+  #flickr-gallery,
   .photo-gallery {
     display: block;
   }
+}
+
+.photo-gallery {
+  background-color: #3f5765;
+  color: #FFF;
 }
 
 .stay-updated legend {

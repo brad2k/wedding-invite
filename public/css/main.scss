@@ -183,14 +183,18 @@
 
 // Photo gallery 
 
+#flickr-gallery,
 .photo-gallery {
-	background-color: $color-dark-blue;
-	color: #FFF;
 	display: none;
 
 	@include media(small) {
 		display: block;
 	}
+}
+
+.photo-gallery {
+	background-color: $color-dark-blue;
+	color: #FFF;
 }
 
 
