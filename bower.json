@@ -16,7 +16,6 @@
   ],
   "devDependencies": {
     "bourbon": "~4.2.3",
-    "neat": "~1.7.2",
     "normalize.css": "~3.0.2"
   },
   "dependencies": {

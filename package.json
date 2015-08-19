@@ -24,7 +24,6 @@
     "fontfaceobserver": "^1.5.1"
   },
   "devDependencies": {
-    "browserify": "^10.2.1",
     "grunt": "~0.4.5",
     "grunt-bowercopy": "~1.2.0",
     "grunt-contrib-jshint": "~0.10.0",

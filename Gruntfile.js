@@ -12,18 +12,18 @@ module.exports = function(grunt) {
         dest: 'build/<%= pkg.name %>.min.js'
       }
     },
-    sass: {                              // Task
-      dist: {                            // Target
-        options: {                       // Target options
-          style: 'expanded',
+    sass: {
+      dist: {
+        options: {
+          style: 'expanded', //compressed
           loadPath: [
-            'app/public/css',
-            'app/bower_components/bourbon/app/assets/stylesheets',
-            'app/bower_components/neat/app/assets/stylesheets'
+            'public/css',
+            'bower_components',
+            'bower_components/normalize-css'
           ]
         },
-        files: {                         // Dictionary of files
-          'app/public/css/main.css': 'app/public/css/main.scss'       // 'destination': 'source'
+        files: {
+          'public/build/css/main.css': 'public/css/main.scss'
         }
       }
     },
@@ -39,29 +39,8 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: ['app/public/css/*.scss', 'app/public/css/core/*.scss'],
+        files: ['public/css/*.scss', 'public/css/core/*.scss'],
         tasks: ['sass']
-      }
-    },
-    bowercopy: {
-      options: {
-        srcPrefix: 'bower_components'
-      },
-      scripts: {
-        options: {
-          destPrefix: 'app/public/js/vendor'
-        },
-        files: {
-          'jquery/jquery.js': 'jquery/dist/jquery.js'
-        }
-      },
-      css: {
-        options: {
-          destPrefix: 'app/public/css/vendor'
-        },
-        files: {
-          'normalize/normalize.css': 'normalize.css/normalize.css'
-        }
       }
     }
   });
@@ -71,7 +50,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks('grunt-bowercopy');
 
   // Default task(s).
   grunt.registerTask('default', ['watch']);
