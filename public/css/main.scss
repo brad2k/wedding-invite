@@ -38,6 +38,10 @@
 	max-width: 825px;
 	margin-left: auto;
 	margin-right: auto;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 // Hero pane
@@ -149,7 +153,46 @@
 }
 
 .destination {
-	margin-bottom: 40px;
+	@include clearfix;
+
+	&:not(:last-child) {
+		position: relative;
+		margin-bottom: 40px;
+		padding-bottom: 40px;
+
+		&:after {
+			content: "";
+			display: block;
+			height: 1px;
+			width: 50%;
+			position: absolute;
+			bottom: 0;
+			right: 50%;
+			@include transform(translateX(50%));
+			@include background(radial-gradient($color-light-blue, $color-dark-blue) left repeat);
+		}
+	}
+
+	.sub-heading {
+		vertical-align: middle;
+		line-height: 30px;
+	}
+
+	.quote {
+		color: $color-light-blue;
+	}
+}
+
+.destination-icon {
+	height: 30px;
+	display: inline-block;
+	fill: #FFF;
+	margin-left: 10px;
+	vertical-align: top;
+
+	path {
+		fill: #FFF;
+	}
 }
 
 
@@ -181,6 +224,14 @@
 }
 
 
+// Accomodations
+
+.accomodation {
+	color: #FFF;
+	background-color: $color-dark-blue;
+}
+
+
 // Photo gallery 
 
 #flickr-gallery,
@@ -193,8 +244,7 @@
 }
 
 .photo-gallery {
-	background-color: $color-dark-blue;
-	color: #FFF;
+	background-color: $color-light-grey;
 }
 
 
@@ -219,6 +269,11 @@
 	padding: 10px 20px;
 	border-bottom: 2px solid $color-grey;
 	box-shadow: none;
+
+	&:active,
+	&:focus {
+		border-bottom-color: $color-dark-blue;
+	}
 }
 
 .form-button {
