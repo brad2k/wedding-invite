@@ -52,12 +52,15 @@
 
 .primary-nav-item {
 	width: 49%;
-	margin-bottom: 2%;
 	@include display(flex);
 	@include align-items(center);
 
-	&:nth-child(even) {
+	&:nth-child(odd) {
 		margin-right: 2%;
+	}
+
+	&:nth-child(-n+2) {
+		margin-bottom: 2%;
 	}
 
 	&:nth-child(n+4) {
@@ -72,13 +75,15 @@
 
 	a {
 		color: #FFF;
-		border-bottom: 3px solid transparent;
+		border: 1px solid $color-light-blue;
 		transition: border-color 150ms ease-out;
 		line-height: 100px;
 		
 
 		@include media(small) {
 			line-height: 30px;
+			border-width: 0 0 2px;
+			border-color: transparent;
 		}
 	}
 }
