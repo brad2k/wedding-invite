@@ -15,7 +15,7 @@
 }
 
 .column-left {
-	@include media(small) {
+	@include media(medium) {
 		float: left;
 		width: 50%;
 		padding-right: 20px;
@@ -23,11 +23,15 @@
 }
 
 .column-right {
-	@include media(small) {
+	@include media(medium) {
 		float: right;
 		width: 50%;
 		padding-left: 20px;
 	}
+}
+
+[class*="column-"] {
+	overflow: hidden;
 }
 
 .block-margin-large {
@@ -95,22 +99,18 @@
 	padding: 0;
 	margin-bottom: 40px;
 
-	@include media(extra-small) {
+	@include media(small+1px) {
 		max-width: 80%;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
-	time {
-		display: block;
-		@include media(small) {
-			display: inline-block;
-			width: 30%;
-		}
+	td {
+		padding: 5px;
 	}
 
-	li {
-		margin-bottom: 20px;
+	.date {
+		width: 30%;
 	}
 }
 
@@ -120,10 +120,6 @@
 	border: 1px solid $color-light-grey;
 
 	@include media(extra-small) {
-		max-width: 400px;
-	}
-
-	@include media(small) {
 		max-width: 400px;
 	}
 }
