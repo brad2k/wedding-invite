@@ -137,6 +137,12 @@
 .travel-ideas {
 	background-color: $color-dark-blue;
 	color: #FFF;
+
+	.form-button {
+		max-width: 250px;
+		margin: 0 auto;
+		cursor: pointer;
+	}
 }
 
 .columnize {
@@ -146,6 +152,11 @@
 
 .destinations {
 	padding: 0;
+
+	&.closed {
+		height: 0;
+		overflow: hidden;
+	}
 }
 
 .destination {
@@ -234,8 +245,7 @@
 
 // Photo gallery 
 
-#flickr-gallery,
-.photo-gallery {
+#flickr-gallery {
 	display: none;
 
 	@include media(small) {
@@ -245,6 +255,19 @@
 
 .photo-gallery {
 	background-color: $color-light-grey;
+}
+
+.gallery-mobile-link {
+	@include media(small) {
+		display: none;
+	}
+}
+
+.gallery-mobile-image {
+	width: 100%;
+	max-width: 300px;
+	display: block;
+	margin: 0 auto;	
 }
 
 

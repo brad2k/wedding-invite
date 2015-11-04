@@ -52,4 +52,14 @@ require(["require", "jquery", "vendor/fontfaceobserver", "smoothscroll", "vendor
     if (mq) {
         checkSize() || $win.on('resize', {'disableWindowEvent': true}, checkSize);
     }
+
+
+    // Hide/show travel ideas
+    var $destinationsWrap = $('.destinations'),
+        $destinationTrigger = $('._reveal-travel');
+
+    $destinationTrigger.on('click', function () {
+        $destinationsWrap.removeClass('closed');
+        $destinationTrigger.hide();
+    });
 });
