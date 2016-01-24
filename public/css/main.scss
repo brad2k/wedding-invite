@@ -206,6 +206,12 @@
 // Directions pane 
 .how-to-get-there {
 	background-color: $color-light-grey;
+
+	figure {
+		span {
+			display: block;
+		}
+	}
 }
 
 .map-image {
@@ -243,13 +249,33 @@
 }
 
 
+// Gifts
+
+.gifts {
+	background-color: $color-dark-blue;
+	color: #FFF;
+
+	.honeyfund-logo {
+		max-width: 300px;
+		margin: 0 auto;
+		display: block;
+	}
+
+	a {
+		color: #FFF;
+	}
+}
+
+
 // Photo gallery 
 
-#flickr-gallery {
+#flickr-gallery,
+.flickr-embed-frame {
 	display: none;
 
 	@include media(small) {
 		display: block;
+		margin: 0 auto !important;
 	}
 }
 
